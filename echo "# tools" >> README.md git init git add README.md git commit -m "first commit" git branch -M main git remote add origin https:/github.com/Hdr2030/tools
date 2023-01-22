@@ -1,0 +1,10 @@
+#To extract Google Drive zip from a Google colab notebook:
+
+import zipfile
+from google.colab import drive
+
+drive.mount('/content/drive/')
+
+zip_ref = zipfile.ZipFile("/content/drive/My Drive/ML/DataSet.zip", 'r')
+zip_ref.extractall("/tmp")
+zip_ref.close()
